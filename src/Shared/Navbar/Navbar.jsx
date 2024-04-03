@@ -6,26 +6,29 @@ const Navbar = () => {
     const navRoutes=(
       <>
         <li>
-            <NavLink to="/" className="nl ml-0 md:ml-3 font-serif font-bold">Home</NavLink>
+            <NavLink to="/" className="nl ml-0 md:ml-3 font-mono font-bold text-white">Home</NavLink>
         </li>
         <li>
-            <NavLink to="/about" className="nl ml-0 md:ml-10 font-serif font-bold" >Our Menu</NavLink>
+            <NavLink to="/about" className="nl ml-0 md:ml-10 font-mono font-bold text-white" >Our Menu</NavLink>
         </li>
         <li>
-            <NavLink to="/services" className="nl ml-0 md:ml-10 font-serif font-bold" >Services</NavLink>
+            <NavLink to="/services" className="nl ml-0 md:ml-10 font-mono font-bold text-white" >Services</NavLink>
         </li>
         <li>
-            <NavLink to="/Gallary" className="nl ml-0 md:ml-10 font-serif font-bold" >Contact</NavLink>
+            <NavLink to="/Gallary" className="nl ml-0 md:ml-10 font-mono font-bold text-white" >Contact</NavLink>
         </li>
         <li>
-            <NavLink to="/blog" className="nl ml-0 md:ml-10 font-serif font-bold" >Dashboard</NavLink>
+            <NavLink to="/blog" className="nl ml-0 md:ml-10 font-mono font-bold text-white" >Dashboard</NavLink>
         </li>
         <li>
-            <NavLink to="/contact" className="nl ml-0 md:ml-10 font-serif font-bold" >Sign Out</NavLink>
+            <NavLink to="/contact" className="nl ml-0 md:ml-10 font-mono font-bold text-white" >Sign Out</NavLink>
         </li>
     </>)
     return (
-        <div className="navbar z-20 fixed bg-opacity-30 md:px-16">
+        <div className="navbar z-20 fixed 
+        bg-opacity-30 
+        bg-black
+        md:px-16">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
