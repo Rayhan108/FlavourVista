@@ -1,8 +1,7 @@
 
 
 import {  NavLink } from "react-router-dom";
-   
-
+import Logo from "../../assets/flavourvista.png"
 const Navbar = () => {
     const navRoutes=(
       <>
