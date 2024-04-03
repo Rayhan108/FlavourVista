@@ -1,7 +1,7 @@
 
 
 import {  NavLink } from "react-router-dom";
-
+   
 
 const Navbar = () => {
     const navRoutes=(
@@ -10,19 +10,19 @@ const Navbar = () => {
             <NavLink to="/" className="nl ml-0 md:ml-3 font-serif font-bold">Home</NavLink>
         </li>
         <li>
-            <NavLink to="/about" className="nl ml-0 md:ml-10 font-serif font-bold" >About</NavLink>
+            <NavLink to="/about" className="nl ml-0 md:ml-10 font-serif font-bold" >Our Menu</NavLink>
         </li>
         <li>
             <NavLink to="/services" className="nl ml-0 md:ml-10 font-serif font-bold" >Services</NavLink>
         </li>
         <li>
-            <NavLink to="/Gallary" className="nl ml-0 md:ml-10 font-serif font-bold" >Gallary</NavLink>
+            <NavLink to="/Gallary" className="nl ml-0 md:ml-10 font-serif font-bold" >Contact</NavLink>
         </li>
         <li>
-            <NavLink to="/blog" className="nl ml-0 md:ml-10 font-serif font-bold" >Blog</NavLink>
+            <NavLink to="/blog" className="nl ml-0 md:ml-10 font-serif font-bold" >Dashboard</NavLink>
         </li>
         <li>
-            <NavLink to="/contact" className="nl ml-0 md:ml-10 font-serif font-bold" >Contact</NavLink>
+            <NavLink to="/contact" className="nl ml-0 md:ml-10 font-serif font-bold" >Sign Out</NavLink>
         </li>
     </>)
     return (
@@ -36,7 +36,7 @@ const Navbar = () => {
             {navRoutes}
             </ul>
           </div>
-          <img src="Logo"
+          <img src={Logo}
           className="w-28 "></img>
         </div>
         <div className="navbar-end hidden lg:flex">
