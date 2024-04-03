@@ -1,0 +1,11 @@
+.active{
+  color: orangered;
+  text-decoration: underline 2px;
+}
+/* .nl:hover{
+  color: orangered;
+  text-decoration: underline 2px;
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
