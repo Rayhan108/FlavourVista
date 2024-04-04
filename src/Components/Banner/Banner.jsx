@@ -18,11 +18,7 @@ const slideImg=[
     { "id":"5","slide":img5},
     { "id":"6","slide":img6},
 ]
-// const slideImg=[
-//     [{ "id":"2","slide2":img2}],
-//     [{ "id":"2","slide2":img2}],
-//     [{ "id":"2","slide2":img2}]
-// ]
+
 const Banner = () => {
     return (
       
