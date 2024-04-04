@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .active{
   color: orangered;
   text-decoration: underline 2px;
@@ -6,9 +10,6 @@
   color: orangered;
   text-decoration: underline 2px;
 }
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 .thumbs-wrapper{
   display: flex;

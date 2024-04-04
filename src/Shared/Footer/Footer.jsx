@@ -2,7 +2,7 @@ import Logo from "../../assets/flavourvista.png"
 
 const Footer = () => {
     return (
-        <div className="mt-5">
+        <div className=" ">
             <footer className="md:footer   md:p-10 bg-neutral text-neutral-content
           md:place-items-center
             flex gap-10 p-8
