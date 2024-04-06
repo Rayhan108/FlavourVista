@@ -1,4 +1,5 @@
 import Banner from "../../../Components/Banner/Banner";
+import CheffRecommended from "../CheffRecommended/CheffRecommended";
 import PopularMenu from "../PopularMenu/PopularMenu";
 import Category from "./Category";
 import Contact from "./Contact";
@@ -15,6 +16,7 @@ const Home = () => {
           <Services/>
           <PopularMenu/>
           <Contact/>
+          <CheffRecommended/>
         </div>
     );
 };

@@ -2,8 +2,8 @@ import img from '../../../assets/home/chef-service.jpg';
 
 const Services = () => {
   return (
-<div className='my-8 md:my-16 mx-auto max-w-screen-lg '>
-  <div className='relative'>
+<div className='my-8 md:my-16 mx-auto max-w-screen-lg max-h-screen'>
+  <div className='relative '>
     <img src={img} alt="" className='' />
     <div className='absolute md:relative md:-top-64 top-0 left-0 md:w-3/4 md:mx-auto w-full h-full  md:p-8 p-2 bg-white md:bg-opacity-50 bg-opacity-30 text-center'>
       
