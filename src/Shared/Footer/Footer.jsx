@@ -20,7 +20,7 @@ const Footer = () => {
     </div>
   </nav>
 </footer>
-<div className="footer footer-center p-4 bg-base-content text-neutral-content">
+<div className="footer footer-center p-4 bg-neutral border-t-2 text-neutral-content">
   
     <p className="font-mono">Copyright © {new Date().getFullYear()} - All right reserved by FlavourVista resturant</p>
  

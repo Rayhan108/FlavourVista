@@ -10,7 +10,9 @@
   color: orangered;
   text-decoration: underline 2px;
 }
-
+.borRadius{
+  border-radius: 0px 200px 200px 200px;
+}
 .thumbs-wrapper{
   display: flex;
   justify-content: center;
