@@ -1,4 +1,4 @@
-import Button from "../../../Components/Button/Button";
+
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 import featureImg from '../../../assets/home/featured.jpg'
 

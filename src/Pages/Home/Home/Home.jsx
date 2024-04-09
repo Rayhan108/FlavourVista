@@ -5,6 +5,7 @@ import Category from "./Category";
 import Contact from "./Contact";
 import FromMenu from "./FromMenu";
 import Services from "./Services";
+import Testimonials from "./Testimonials";
 
 
 
@@ -19,6 +20,7 @@ const Home = () => {
           <Contact/>
           <CheffRecommended/>
           <FromMenu/>
+          <Testimonials/>
         </div>
     );
 };
