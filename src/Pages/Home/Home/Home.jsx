@@ -3,6 +3,7 @@ import CheffRecommended from "../CheffRecommended/CheffRecommended";
 import PopularMenu from "../PopularMenu/PopularMenu";
 import Category from "./Category";
 import Contact from "./Contact";
+import FromMenu from "./FromMenu";
 import Services from "./Services";
 
 
@@ -17,6 +18,7 @@ const Home = () => {
           <PopularMenu/>
           <Contact/>
           <CheffRecommended/>
+          <FromMenu/>
         </div>
     );
 };
