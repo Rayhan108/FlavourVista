@@ -22,10 +22,14 @@ const slideImg = [
 const Banner = () => {
   return (
    <div >
-     <Carousel  autoPlay infiniteLoop>
+     <Carousel
+    autoPlay 
+    infiniteLoop
+     
+     >
       {slideImg.map((d, id) => (
         <div key={id}>
-          <img src={d?.slide} alt="" />
+          <img src={d?.slide} alt="" style={{ width: '100%', height: 'auto', maxHeight: '450px' }}/>
         </div>
       ))}
     </Carousel>
