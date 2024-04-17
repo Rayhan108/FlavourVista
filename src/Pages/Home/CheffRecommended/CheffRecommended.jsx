@@ -13,7 +13,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 const CheffRecommended = () => {
   const [items, setItems] = useState([]);
   useEffect(() => {
-    fetch("recommended.json")
+    fetch("http://localhost:5000/recommended")
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, []);

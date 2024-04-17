@@ -4,9 +4,14 @@ import orderImg from "../../../assets/shop/order.jpg";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import useMenu from "../../../hooks/useMenu";
-import FoodCart from "../../../Components/FoodCart/FoodCart";
 import ItemList from "../../../Components/ItemList/ItemList";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
 const Order = () => {
+    const categories = ['salad','pizza','soup','dessert','drink'];
+    const {category}=useParams();
+    const initialIndex = categories.indexOf(category);
+    const [tabIndex, setTabIndex] = useState(initialIndex);
   const [menu] = useMenu();
   const drinks = menu.filter((item) => item.category === "drinks");
   const dessert = menu.filter((item) => item.category === "dessert");
@@ -22,7 +27,7 @@ const Order = () => {
         details={"order you favourite dish"}
       />
 
-      <Tabs className={'flex flex-col uppercase items-center p-5 md:p-9'}>
+      <Tabs className={'flex flex-col uppercase items-center p-5 md:p-9'} selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
         <TabList>
           <Tab>Salads</Tab>
           <Tab>Pizzas</Tab>

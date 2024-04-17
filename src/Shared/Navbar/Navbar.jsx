@@ -1,8 +1,9 @@
 
 
-import {  NavLink } from "react-router-dom";
+import {  NavLink, useParams } from "react-router-dom";
 import Logo from "../../assets/flavourvista.png"
 const Navbar = () => {
+  const {category}=useParams();
     const navRoutes=(
       <>
         <li>
@@ -12,7 +13,7 @@ const Navbar = () => {
             <NavLink to="/menu" className="nl ml-0 md:ml-10 font-mono font-bold text-white" >Our Menu</NavLink>
         </li>
         <li>
-            <NavLink to="/order" className="nl ml-0 md:ml-10 font-mono font-bold text-white" >Order</NavLink>
+            <NavLink to={`/order/${category}`} className="nl ml-0 md:ml-10 font-mono font-bold text-white" >Order</NavLink>
         </li>
         <li>
             <NavLink to="/Gallary" className="nl ml-0 md:ml-10 font-mono font-bold text-white" >Contact</NavLink>
