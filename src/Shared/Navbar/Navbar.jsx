@@ -12,7 +12,7 @@ const Navbar = () => {
             <NavLink to="/menu" className="nl ml-0 md:ml-10 font-mono font-bold text-white" >Our Menu</NavLink>
         </li>
         <li>
-            <NavLink to="/services" className="nl ml-0 md:ml-10 font-mono font-bold text-white" >Services</NavLink>
+            <NavLink to="/order" className="nl ml-0 md:ml-10 font-mono font-bold text-white" >Order</NavLink>
         </li>
         <li>
             <NavLink to="/Gallary" className="nl ml-0 md:ml-10 font-mono font-bold text-white" >Contact</NavLink>
