@@ -26,7 +26,7 @@ const Menu = () => {
         details={"would you like to try dish?"}
       />
       <SectionTitle heading={"todays offer"} subHeading={"Dont miss"} />
-<MenuCategory items={offered}  title={"offered"}/>
+<MenuCategory items={offered}  title={"dessert"}/>
 <Cover
         img={desertBg}
         title={"desert"}

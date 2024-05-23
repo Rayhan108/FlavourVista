@@ -22,7 +22,7 @@ const Navbar = () => {
             <NavLink to="/blog" className="nl ml-0 md:ml-10 font-mono font-bold text-white" >Dashboard</NavLink>
         </li>
         <li>
-            <NavLink to="/contact" className="nl ml-0 md:ml-10 font-mono font-bold text-white" >Sign Out</NavLink>
+            <NavLink to="/login" className="nl ml-0 md:ml-10 font-mono font-bold text-white" >Login</NavLink>
         </li>
     </>)
     return (
