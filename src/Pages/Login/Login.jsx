@@ -11,7 +11,7 @@ const Login = () => {
 
 
   return (
-    <div className=' md:flex justify-center md:items-center md:min-h-screen  md:p-0 p-6'>
+    <div className=' md:flex justify-center items-center min-h-screen  md:p-0 p-6'>
       <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100  text-gray-900'>
         <div className='mb-8 text-center'>
           <h1 className='my-3 text-4xl font-bold'>Log In</h1>
@@ -92,7 +92,7 @@ const Login = () => {
         <p className='px-6 text-sm text-center text-gray-400'>
           Don&apos;t have an account yet?{' '}
           <Link
-            to='/register'
+            to='/signUp'
             className='hover:underline hover:text-emerald-500 text-amber-500'
           >
             Sign up
