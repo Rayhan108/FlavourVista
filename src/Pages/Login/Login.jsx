@@ -6,13 +6,34 @@ import {
   LoadCanvasTemplate,
   validateCaptcha,
 } from "react-simple-captcha";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 const Login = () => {
+  const [disabled,setDesabled]=useState(true)
   
+  const captchaRef=useRef(null);
   useEffect(()=>{
   loadCaptchaEnginge(6); 
   },[])
   
+  const handleLogin=e=>{
+    e.preventDefault();
+    const form=e.target;
+    const email=form.email.value;
+    const password=form.password.value;
+    console.log(email,password);
+  }
+  const handleValidateCaptcha=()=>{
+    const user_captcha_value = captchaRef.current.value;
+    if (validateCaptcha(user_captcha_value)) {
+      setDesabled(false)
+      
+  }
+
+  else {
+    setDesabled(true)
+   
+  }
+  }
   return (
     <div className=" md:flex justify-center items-center min-h-screen  md:p-0 p-6">
       <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100  text-gray-900">
@@ -23,6 +44,7 @@ const Login = () => {
           </p>
         </div>
         <form
+        onSubmit={handleLogin}
           noValidate=""
           action=""
           className="space-y-6 ng-untouched ng-pristine ng-valid"
@@ -65,17 +87,22 @@ const Login = () => {
               </div>
               <input
                 type="text"
+                ref={captchaRef}
                 name="captha"
                 placeholder="Write the above text"
                 className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-emerald-400 bg-gray-200 text-gray-900"
               />
+               <button onClick={handleValidateCaptcha} className='text-xs mt-1 mb-0 btn btn-xs w-full bg-gray-400 hover:bg-amber-500 text-white'>
+            Validate Captcha
+          </button>
             </div>
           </div>
 
           <div>
             <button
+            disabled={disabled}
               type="submit"
-              className="bg-amber-500 w-full rounded-md py-3 text-white"
+              className={`btn bg-gray-400 hover:bg-amber-500 w-full rounded-md py-3 text-black `}
             >
               {"Continue"}
             </button>
