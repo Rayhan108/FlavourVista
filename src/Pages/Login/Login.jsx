@@ -6,34 +6,35 @@ import {
   LoadCanvasTemplate,
   validateCaptcha,
 } from "react-simple-captcha";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
 const Login = () => {
-  const [disabled,setDesabled]=useState(true)
-  
-  const captchaRef=useRef(null);
-  useEffect(()=>{
-  loadCaptchaEnginge(6); 
-  },[])
-  
-  const handleLogin=e=>{
+  const [disabled, setDesabled] = useState(true);
+  const { signIn } = useContext(AuthContext);
+  const captchaRef = useRef(null);
+  useEffect(() => {
+    loadCaptchaEnginge(6);
+  }, []);
+
+  const handleLogin = (e) => {
     e.preventDefault();
-    const form=e.target;
-    const email=form.email.value;
-    const password=form.password.value;
-    console.log(email,password);
-  }
-  const handleValidateCaptcha=()=>{
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+    signIn(email, password).then((result) => {
+      const user = result.user;
+      console.log(user);
+    });
+  };
+  const handleValidateCaptcha = () => {
     const user_captcha_value = captchaRef.current.value;
     if (validateCaptcha(user_captcha_value)) {
-      setDesabled(false)
-      
-  }
-
-  else {
-    setDesabled(true)
-   
-  }
-  }
+      setDesabled(false);
+    } else {
+      setDesabled(true);
+    }
+  };
   return (
     <div className=" md:flex justify-center items-center min-h-screen  md:p-0 p-6">
       <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100  text-gray-900">
@@ -44,7 +45,7 @@ const Login = () => {
           </p>
         </div>
         <form
-        onSubmit={handleLogin}
+          onSubmit={handleLogin}
           noValidate=""
           action=""
           className="space-y-6 ng-untouched ng-pristine ng-valid"
@@ -80,10 +81,10 @@ const Login = () => {
                 className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-emerald-400 bg-gray-200 text-gray-900"
               />
             </div>
-       
+
             <div>
               <div className="flex justify-between">
-              <LoadCanvasTemplate />
+                <LoadCanvasTemplate />
               </div>
               <input
                 type="text"
@@ -92,15 +93,18 @@ const Login = () => {
                 placeholder="Write the above text"
                 className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-emerald-400 bg-gray-200 text-gray-900"
               />
-               <button onClick={handleValidateCaptcha} className='text-xs mt-1 mb-0 btn btn-xs w-full bg-gray-400 hover:bg-amber-500 text-white'>
-            Validate Captcha
-          </button>
+              <button
+                onClick={handleValidateCaptcha}
+                className="text-xs mt-1 mb-0 btn btn-xs w-full bg-gray-400 hover:bg-amber-500 text-white"
+              >
+                Validate Captcha
+              </button>
             </div>
           </div>
 
           <div>
             <button
-            disabled={disabled}
+              disabled={disabled}
               type="submit"
               className={`btn bg-gray-400 hover:bg-amber-500 w-full rounded-md py-3 text-black `}
             >

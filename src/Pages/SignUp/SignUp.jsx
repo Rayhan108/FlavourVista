@@ -2,9 +2,19 @@ import { Link } from "react-router-dom";
 
 
 import { FcGoogle } from "react-icons/fc";
+import { useForm } from "react-hook-form";
 
  const SignUp = () => {
-
+  const {
+    register,
+    handleSubmit,
+ 
+    
+    formState: { errors },
+  } = useForm();
+  const onSubmit=data=>{
+    console.log(data);
+  }
   return (
     <div className="flex justify-center items-center min-h-screen">
       <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900">
@@ -15,7 +25,7 @@ import { FcGoogle } from "react-icons/fc";
           </p>
         </div>
         <form
-          
+          onSubmit={handleSubmit(onSubmit)}
           noValidate=""
           action=""
           className="space-y-6 ng-untouched ng-pristine ng-valid"
@@ -27,7 +37,8 @@ import { FcGoogle } from "react-icons/fc";
               </label>
               <input
                 type="text"
-                name="name"
+                {...register("name")}
+                
                 required
                 id="name"
                 placeholder="Enter Your Name Here"
@@ -43,9 +54,12 @@ import { FcGoogle } from "react-icons/fc";
                 required
                 type="file"
                 id="image"
-                name="image"
+                {...register("image")}
                 accept="image/*"
               />
+               {errors.image && (
+                  <span className="text-red-600">Image is required</span>
+                )}
             </div>
             <div>
               <label htmlFor="email" className="block mb-2 text-sm">
@@ -53,13 +67,16 @@ import { FcGoogle } from "react-icons/fc";
               </label>
               <input
                 type="email"
-                name="email"
+                {...register("email")}
                 id="email"
                 required
                 placeholder="Enter Your Email Here"
                 className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-emerald-400 bg-gray-200 text-gray-900"
                 data-temp-mail-org="0"
               />
+               {errors.email && (
+                  <span className="text-red-600">Email is required</span>
+                )}
             </div>
             <div>
               <div className="flex justify-between">
@@ -69,13 +86,16 @@ import { FcGoogle } from "react-icons/fc";
               </div>
               <input
                 type="password"
-                name="password"
+                {...register("password")}
                 autoComplete="new-password"
                 id="password"
                 required
                 placeholder="*******"
                 className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-emerald-400 bg-gray-200 text-gray-900"
               />
+               {errors.password && (
+                  <span className="text-red-600">password is required</span>
+                )}
             </div>
           </div>
 
